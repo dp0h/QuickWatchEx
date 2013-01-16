@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuickWatchEx</name>
+    </assembly>
+    <members>
+        <member name="T:QuickWatchEx.EnvDteDebugControllerBase">
+            <summary>
+            EnvDteDebugControllerBase
+            </summary>
+        </member>
+        <member name="T:QuickWatchEx.Connect">
+            <summary>The object for implementing an Add-in.</summary>
+            <seealso class='IDTExtensibility2' />
+        </member>
+        <member name="M:QuickWatchEx.Connect.#ctor">
+            <summary>Implements the constructor for the Add-in object. Place your initialization code within this method.</summary>
+        </member>
+        <member name="M:QuickWatchEx.Connect.OnConnection(System.Object,Extensibility.ext_ConnectMode,System.Object,System.Array@)">
+            <summary>Implements the OnConnection method of the IDTExtensibility2 interface. Receives notification that the Add-in is being loaded.</summary>
+            <param term='application'>Root object of the host application.</param>
+            <param term='connectMode'>Describes how the Add-in is being loaded.</param>
+            <param term='addInInst'>Object representing this Add-in.</param>
+            <seealso class='IDTExtensibility2' />
+        </member>
+        <member name="M:QuickWatchEx.Connect.OnDisconnection(Extensibility.ext_DisconnectMode,System.Array@)">
+            <summary>Implements the OnDisconnection method of the IDTExtensibility2 interface. Receives notification that the Add-in is being unloaded.</summary>
+            <param term='disconnectMode'>Describes how the Add-in is being unloaded.</param>
+            <param term='custom'>Array of parameters that are host application specific.</param>
+            <seealso class='IDTExtensibility2' />
+        </member>
+        <member name="M:QuickWatchEx.Connect.OnAddInsUpdate(System.Array@)">
+            <summary>Implements the OnAddInsUpdate method of the IDTExtensibility2 interface. Receives notification when the collection of Add-ins has changed.</summary>
+            <param term='custom'>Array of parameters that are host application specific.</param>
+            <seealso class='IDTExtensibility2' />		
+        </member>
+        <member name="M:QuickWatchEx.Connect.OnStartupComplete(System.Array@)">
+            <summary>Implements the OnStartupComplete method of the IDTExtensibility2 interface. Receives notification that the host application has completed loading.</summary>
+            <param term='custom'>Array of parameters that are host application specific.</param>
+            <seealso class='IDTExtensibility2' />
+        </member>
+        <member name="M:QuickWatchEx.Connect.OnBeginShutdown(System.Array@)">
+            <summary>Implements the OnBeginShutdown method of the IDTExtensibility2 interface. Receives notification that the host application is being unloaded.</summary>
+            <param term='custom'>Array of parameters that are host application specific.</param>
+            <seealso class='IDTExtensibility2' />
+        </member>
+        <member name="M:QuickWatchEx.Connect.DebuggerEvents_OnEnterDesignMode(EnvDTE.dbgEventReason)">
+            <summary>
+            Debug event handler
+            </summary>
+            <param name="Reason"></param>
+        </member>
+        <member name="M:QuickWatchEx.Connect.DebuggerEvents_OnEnterBreakMode(EnvDTE.dbgEventReason,EnvDTE.dbgExecutionAction@)">
+            <summary>
+            Debug event handler
+            </summary>
+            <param name="Reason"></param>
+            <param name="ExecutionAction"></param>
+        </member>
+        <member name="M:QuickWatchEx.Connect.DebuggerEvents_OnEnterRunMode(EnvDTE.dbgEventReason)">
+            <summary>
+            Debug event handler
+            </summary>
+            <param name="Reason"></param>
+        </member>
+        <member name="M:QuickWatchEx.Connect.MenuItemHandlerQuickWatch_Click(System.Object,System.Boolean@,System.Boolean@)">
+            <summary>
+            Button handler
+            </summary>
+            <param name="CommandaBarControl"></param>
+            <param name="handled"></param>
+            <param name="cancelDefault"></param>
+        </member>
+        <member name="M:QuickWatchEx.Connect.IsInDebugMode(EnvDTE80.DTE2)">
+            <summary>
+            Checks if VS in Debug mode
+            </summary>
+            <param name="dte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickWatchEx.Connect.CheckExpression(System.String,EnvDTE80.DTE2)">
+            <summary>
+            Check if the expression is valid
+            </summary>
+            <param name="expression"></param>
+            <param name="dte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:QuickWatchEx.Connect.GetClosestVariable(System.String,System.Int32,System.Int32)">
+            <summary>
+            Searches for a valid expression around the cursor.
+            </summary>
+            <param name="str"></param>
+            <param name="line"></param>
+            <param name="pos"></param>
+            <returns></returns>
+        </member>
+        <member name="T:QuickWatchEx.EnvDteDebugExpression">
+            <summary>
+            EnvDteDebugExpression
+            </summary>
+        </member>
+    </members>
+</doc>
